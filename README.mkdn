@@ -1,0 +1,9 @@
+Amon2 Cookbook
+==============
+
+This is a Amon2 cookbook repository.
+
+LICENSE
+-------
+
+Copyright (C) 2012 Tokuhiro Matsuno, All rights reserved.

@@ -1,0 +1,22 @@
+なんちゃって BDD
+================
+
+BDD 的なインターフェスを気取りたいときは以下のように t/Util.pm に記述します。
+
+    package t::Util;
+    our @EXPORT = qw/describe context it/;
+    *describe = *context = *it = *Test::More::subtest;
+
+そうすると、以下のように記述できるようになり BDD 厨を気取ることができます。
+
+    use t::Util;
+    use Test::More;
+
+    describe 'MyStuff' => sub {
+        my $stuff = MyStuff->new;
+        context '#foo' => sub {
+            it 'returns 3' => sub {
+                is($stuff->foo, 3);
+            };
+        };
+    };
